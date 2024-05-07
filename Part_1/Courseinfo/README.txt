@@ -174,14 +174,17 @@ const App = () => {
 	const course = 'Half Stack application development'
 	const parts = [
 		{
+      
 		  name: 'Fundamentals of React',
 		  exercises: 10
 		},
 		{
+      
 		  name: 'Using props to pass data',
 		  exercises: 7
 		},
 		{
+      
 		  name: 'State of a component',
 		  exercises: 14
 		}
@@ -205,36 +208,36 @@ const Header = (props) => {
 }
 
 const Content = (props) => {
-	const lists = props.parts.map(function(item) {
-		return (
+  console.log(props)
+	const nameExercises = props.parts.map(item => (
+		
 			<div>
 				<p> {item.name}: {item.exercises}</p>
 			</div>
 		)
-	})
+  )
 	
-	return lists
+	return nameExercises
 }
 
 const Total = (props) => {
-	var score = 0
+	let counter = 0
 	
-	const lists = props.parts.map(function(item) {
+	const exrcisesTotal = props.parts.map( item=>( 
 		
-		score = score + item.exercises 
+		counter = counter + item.exercises 
 		
-	})
+	))
 	
 	return (
 		<div>
-			<p>Number of exercises: {score} </p>
+			<p>Number of exercises: {counter} </p>
 		</div>
 	)
 }
-
-  
+	 
+ 
 export default App
-
 
 1.5: Course Information, Step 5
 
