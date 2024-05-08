@@ -272,33 +272,33 @@ const App = () => {
 }
 
 const Content = (props) => {
-	const lists = props.course.parts.map(function(item) {
-		return (
+	const courseContent = props.course.parts.map(item =>(
+		 (
 			<div>
 				<p>{item.name}: {item.exercises}</p>
 			</div>
 		)
-	})
+	))
 	
-	return lists
+	return courseContent
 }
 
-  const Total = (props) => {
-    var score = 0
-    
-    const lists = props.course.parts.map(function(item) {
-      
-      score = score + item.exercises
-      
-      return score
-    })
-    
-    return (
-      <div>
-        <p>Number of exercises: {score}</p>
-      </div>
-    )
-  }
-
+const Total = (props) => {
+  var counter = 0
   
+  const exrcisesTotal = props.course.parts.map(item => (
+    
+    counter = counter + item.exercises
+    
+    
+  ))
+  
+  return (
+    <div>
+      <p>Number of exercises: {counter}</p>
+    </div>
+  )
+}
+ 
+ 
 export default App
